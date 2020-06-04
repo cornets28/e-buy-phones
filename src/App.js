@@ -10,11 +10,19 @@ class App extends Component {
       <div className="container">
         <div className="row">
           <div className="col-6">coloumn 1</div>
-          <div className="col-6">coloumn 2</div>
+          <div className="col-6">
+            <i class="fas fa-2x fa-facebook"></i>
+          </div>
+          <div className="col-6">coloumn 1</div>
+
+          <div className="col-6">
+            <span>
+              <i className="fas fa-home" />
+            </span>
+          </div>
         </div>
       </div>
-
-    )
+    );
    
   }
 }

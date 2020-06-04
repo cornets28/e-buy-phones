@@ -1,38 +1,45 @@
-.App {
-  text-align: center;
+:root {
+  --defaulBlue: #cf1a8a;
+  --defaultLightBlue: #151d1c;
+  --defaultWhite: #f3f3f3;
+  --defaultDark: #232528;
+  --defaultDark: #000;
+  --defaultYellow: #ffa400;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: var(--defaultWhite) !important;
+  color: var(--defaultDark) !important;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.text-title {
+  font-family: "Permanent Marker", cursive;
+  letter-spacing: 0.3rem;
+  text-transform: uppercase;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.text-blue {
+  color: var(--defaulBlue);
 }
-
-.App-link {
-  color: #61dafb;
+.text-bright {
+  color: var(--defaultLightBlue);
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  justify-content: flex-start !important;
+}
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--defaultBlack);
+  border-radius: 0 !important;
+  border: 0.1rem solid var(--defaultDark) !important;
+}
+.btn-black:hover {
+  background: var(--defaultDark) !important;
+  color: var(--defaultWhite) !important;
+}
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--defaultYellow);
 }

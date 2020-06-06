@@ -8,7 +8,7 @@ import logoApp from "../logo.svg";
 export default class Navbar extends Component {
   render() {
     return (
-      <nav className="navbar navbar-expand-sm  bg-danger navbar-dark px-sm-5">
+      <NavbarWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
         {/* https://www.iconfinder.com/icons/1243689/call_phone_icon Creative
         Commons (Attribution 3.0 Unported);
         https://www.iconfinder.com/Makoto_msk */}
@@ -24,16 +24,23 @@ export default class Navbar extends Component {
           </li>
         </ul>
         <Link to="/cart" className="ml-auto">
-          < BtnContainer>
+          <BtnContainer>
             <span className="mr-2">
               <i className="fas fa-cart-plus" />
             </span>
             my cart
-          </ BtnContainer>
+          </BtnContainer>
         </Link>
-      </nav>
+      </NavbarWrapper>
     );
   }
 }
 
-
+const NavbarWrapper = styled.nav`
+  background: var(--defaulPink);
+  .nav-link {
+    color: var(--defaultWhite)!important;
+    text-transform: capitalize;
+    font-size: 1.5rem;
+  }
+`;

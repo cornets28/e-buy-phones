@@ -1,6 +1,7 @@
 :root {
-  --defaulBlue: #cf1a8a;
-  --defaultLightBlue: #151d1c;
+  --defaulPink: #cf1a8a;
+  --defaultLightPink: #cf1a8a;
+  --defaultLightYellow: #bb830b;
   --defaultWhite: #f3f3f3;
   --defaultDark: #232528;
   --defaultDark: #000;
@@ -18,10 +19,10 @@ body {
   text-transform: uppercase;
 }
 .text-blue {
-  color: var(--defaulBlue);
+  color: var(--defaulPink);
 }
 .text-bright {
-  color: var(--defaultLightBlue);
+  color: var(--defaultLightYellow);
 }
 .navbar {
   justify-content: flex-start !important;

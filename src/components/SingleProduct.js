@@ -13,11 +13,14 @@ export default class SingleProduct extends Component {
         <div className="card">
           <div
             className="img-container p-5"
-            onClick={console.log("Clicked from the image coontainer!")}
+            onClick={() =>console.log("Clicked from the image coontainer!")}
           >
             <Link to="/details">
               <img src= {img} alt="Phone image" className="card-img-top" />
             </Link>
+            <button className="cart-button"disabled={inCart ? true : false }>
+
+            </button>
           </div>
         </div>
       </PhoneWrapper>

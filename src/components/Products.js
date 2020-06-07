@@ -19,8 +19,8 @@ export default class Products extends Component {
             <Title name="our" title="phones" />
             <div className="row">
               <PhoneConsumer>
-                {(hello) => {
-                  return <h1>{hello}</h1>;
+                {(value) => {
+                  return <h1>{value}</h1>;
                 }}
               </PhoneConsumer>
             </div>

@@ -7,7 +7,7 @@ export const ourPhones = [
          {
            id: 1,
            title: "Google Pixel - White",
-           img: "images/produ-1.png",
+           img: "images/prod-1.png",
            price: 109.99,
            company: "ERICSON",
            info:
@@ -19,7 +19,7 @@ export const ourPhones = [
          {
            id: 2,
            title: "Samsung S8",
-           img: "images/produ-2.png",
+           img: "images/prod-2.png",
            price: 100,
            company: "SAMSUNG",
            info:
@@ -31,7 +31,7 @@ export const ourPhones = [
          {
            id: 3,
            title: "HTC 10 - White",
-           img: "images/produ-4.png",
+           img: "images/prod-4.png",
            price: 80,
            company: "htc",
            info:
@@ -43,7 +43,7 @@ export const ourPhones = [
          {
            id: 4,
            title: "HTC 10 - Black",
-           img: "images/produ-3.png",
+           img: "images/prod-3.png",
            price: 120.99,
            company: "htc",
            info:
@@ -55,7 +55,7 @@ export const ourPhones = [
          {
            id: 5,
            title: "HTC Desire 626s",
-           img: "images/produ-5.png",
+           img: "images/prod-5.png",
            price: 124,
            company: "htc",
            info:
@@ -67,7 +67,7 @@ export const ourPhones = [
          {
            id: 6,
            title: "Iphone S6",
-           img: "images/produ-6.png",
+           img: "images/prod-6.jpg",
            price: 170,
            company: "apple",
            info:
@@ -79,7 +79,7 @@ export const ourPhones = [
          {
            id: 7,
            title: "Iphone 10",
-           img: "images/produ-7.png",
+           img: "images/prod-7.png",
            price: 130,
            company: "apple",
            info:
@@ -91,7 +91,7 @@ export const ourPhones = [
          {
            id: 8,
            title: "Samsung Galaxy S9",
-           img: "images/produ-8.png",
+           img: "images/prod-8.png",
            price: 90,
            company: "apple",
            info:
@@ -105,7 +105,7 @@ export const ourPhones = [
 export const detailPhone = {
   id: 1,
   title: "Google Pixel - Black",
-  img: "images/produ-1.png",
+  img: "images/prod-1.png",
   price: 200,
   company: "google",
   info:

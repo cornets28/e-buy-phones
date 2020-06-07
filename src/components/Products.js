@@ -11,7 +11,6 @@ export default class Products extends Component {
    };
 
   render() {
-    console.log(this.state.phones)
     return (
       <React.Fragment>
         <div className="py-5">
@@ -20,7 +19,7 @@ export default class Products extends Component {
             <div className="row">
               <PhoneConsumer>
                 {(value) => {
-                  return <h1>{value}</h1>;
+                  console.log(value)
                 }}
               </PhoneConsumer>
             </div>

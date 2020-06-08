@@ -4,6 +4,7 @@ import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { PhoneConsumer } from "../context";
+import PropTypes from 'prop-types'; 
 
 export default class SingleProduct extends Component {
   render() {
@@ -47,6 +48,16 @@ export default class SingleProduct extends Component {
     );
   }
 }
+
+SingleProduct.propTypes = {
+  phone: PropTypes.shape({
+    id: PropTypes.number,
+    img: PropTypes.string,
+    title: PropTypes.string,
+    price: PropTypes.number,
+    inCart: PropTypes.bool,
+  }).isRequired,
+};
 
 const PhoneWrapper = styled.div`
   .card {

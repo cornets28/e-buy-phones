@@ -10,6 +10,7 @@ class PhoneProvider extends Component {
     detailPhone
   };
  // Get the copy of the data, instead of referencing (the original) them
+ // also called 'DESTRUCTORING'
  componentDidMount(){
    this.setPhones();
  }
@@ -29,8 +30,8 @@ class PhoneProvider extends Component {
     console.log("hello from detail handler");
   }
 
-  addToCart() {
-    console.log("hello from add to cart");
+  addToCart(id) {
+    console.log(`This is the id: ${id}`);
   }
   render() {
     return (

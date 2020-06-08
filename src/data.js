@@ -3,11 +3,11 @@ https://www.iconfinder.com/icons/1243689/call_phone_icon
 Creative Commons (Attribution 3.0 Unported);
 https://www.iconfinder.com/Makoto_msk */
 
-export const storeProducts = [
+export const ourPhones = [
          {
            id: 1,
            title: "Google Pixel - White",
-           img: "images/produ-1.png",
+           img: "images/prod-1.png",
            price: 109.99,
            company: "ERICSON",
            info:
@@ -19,7 +19,7 @@ export const storeProducts = [
          {
            id: 2,
            title: "Samsung S8",
-           img: "images/produ-2.png",
+           img: "images/prod-2.png",
            price: 100,
            company: "SAMSUNG",
            info:
@@ -31,7 +31,7 @@ export const storeProducts = [
          {
            id: 3,
            title: "HTC 10 - White",
-           img: "images/produ-4.png",
+           img: "images/prod-4.png",
            price: 80,
            company: "htc",
            info:
@@ -43,7 +43,7 @@ export const storeProducts = [
          {
            id: 4,
            title: "HTC 10 - Black",
-           img: "images/produ-3.png",
+           img: "images/prod-3.png",
            price: 120.99,
            company: "htc",
            info:
@@ -55,7 +55,7 @@ export const storeProducts = [
          {
            id: 5,
            title: "HTC Desire 626s",
-           img: "images/produ-5.png",
+           img: "images/prod-5.png",
            price: 124,
            company: "htc",
            info:
@@ -66,8 +66,8 @@ export const storeProducts = [
          },
          {
            id: 6,
-           title: "Iphone S6",
-           img: "images/produ-6.png",
+           title: "Xiaomi Mi 4i",
+           img: "images/prod-6.png",
            price: 170,
            company: "apple",
            info:
@@ -79,7 +79,7 @@ export const storeProducts = [
          {
            id: 7,
            title: "Iphone 10",
-           img: "images/produ-7.png",
+           img: "images/prod-7.png",
            price: 130,
            company: "apple",
            info:
@@ -91,7 +91,7 @@ export const storeProducts = [
          {
            id: 8,
            title: "Samsung Galaxy S9",
-           img: "images/produ-8.png",
+           img: "images/prod-8.png",
            price: 90,
            company: "apple",
            info:
@@ -102,10 +102,10 @@ export const storeProducts = [
          },
        ];
 
-export const detailProduct = {
+export const detailPhone = {
   id: 1,
   title: "Google Pixel - Black",
-  img: "images/produ-1.png",
+  img: "images/prod-1.png",
   price: 200,
   company: "google",
   info:

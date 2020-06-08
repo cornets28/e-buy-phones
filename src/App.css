@@ -18,7 +18,7 @@ body {
   letter-spacing: 0.3rem;
   text-transform: uppercase;
 }
-.text-blue {
+.text-pink {
   color: var(--defaulPink);
 }
 .text-bright {

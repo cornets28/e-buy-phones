@@ -6,9 +6,25 @@ const PhoneContext = React.createContext();
 
 class PhoneProvider extends Component {
   state = {
-    phones: ourPhones,
-    detailPhone,
+    phones: [],
+    detailPhone
   };
+ // Get the copy of the data, instead of referencing (the original) them
+ componentDidMount(){
+   this.setPhones();
+ }
+  setPhones = () => {
+    let tempPhones = [];
+    ourPhones.forEach( phone => {
+      const singlePhone = { ...phone };
+      tempPhones = [...tempPhones, singlePhone];
+    });
+    this.setState({
+      phones: tempPhones
+    })
+  }
+  // Get the copy of the data (ENDS HERE)
+
   detailHandler() {
     console.log("hello from detail handler");
   }

@@ -66,8 +66,8 @@ export const ourPhones = [
          },
          {
            id: 6,
-           title: "Iphone S6",
-           img: "images/prod-6.jpg",
+           title: "Xiaomi Mi 4i",
+           img: "images/prod-6.png",
            price: 170,
            company: "apple",
            info:

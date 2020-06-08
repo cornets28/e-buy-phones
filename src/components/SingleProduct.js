@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-import { PhoneConsumer } from "../context";
+// import { PhoneConsumer } from "../context";
 import PropTypes from 'prop-types'; 
 
 export default class SingleProduct extends Component {

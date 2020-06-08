@@ -6,15 +6,32 @@ const PhoneContext = React.createContext();
 
 class PhoneProvider extends Component {
   state = {
-    phones: ourPhones,
-    detailPhone,
+    phones: [],
+    detailPhone
   };
+ // Get the copy of the data, instead of referencing (the original) them
+ // also called 'DESTRUCTORING'
+ componentDidMount(){
+   this.setPhones();
+ }
+  setPhones = () => {
+    let tempPhones = [];
+    ourPhones.forEach( phone => {
+      const singlePhone = { ...phone };
+      tempPhones = [...tempPhones, singlePhone];
+    });
+    this.setState({
+      phones: tempPhones
+    })
+  }
+  // Get the copy of the data (ENDS HERE)
+
   detailHandler() {
     console.log("hello from detail handler");
   }
 
-  addToCart() {
-    console.log("hello from add to cart");
+  addToCart(id) {
+    console.log(`This is the id: ${id}`);
   }
   render() {
     return (

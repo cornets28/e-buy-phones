@@ -50,11 +50,11 @@ class PhoneProvider extends Component {
     phone.total = price;
 
     this.setState(() => {
-      // return {
-      // phones: [...tempPhones],
-      // cart: [...this.state.cart, phone],
-      // detailphone: { ...phone },
-      // };
+      return {
+      phones: [...tempPhones],
+      cart: [...this.state.cart, phone],
+      detailphone: { ...phone },
+      };
     });
   };
 

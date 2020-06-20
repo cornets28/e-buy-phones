@@ -47,9 +47,16 @@ export default class ProductDetails extends Component {
                   <Link to="/">
                     <BtnContainer>back to all phones</BtnContainer>
                   </Link>
-
-                  <BtnContainer cart disabled={inCart ? true : false } onClick={value.addToCart(id)}>
-                    {inCart? "in cart" : "add to cart" }
+        
+                  <BtnContainer
+                    cart
+                    disabled={inCart ? true : false}
+                    onClick={() => {
+                      value.addToCart(id);
+                      // value.openModal(id);
+                    }}
+                  >
+                    {inCart ? "in cart" : "add to cart"}
                   </BtnContainer>
                 </div>
               </div>

@@ -22,7 +22,7 @@ export default class Modal extends Component {
                       className="col-8 mx-auto col-md-6 col-lg-4 p-5 text-center text-capitalize"
                       id="modal"
                     >
-                      <h5>your add item in cart</h5>
+                      <h5>your added item in cart</h5>
                       <img src={img} className="img-fluid" alt="" />
                       <h5>{title}</h5>
                       <h5 className="text-muted">price : ${price}</h5>

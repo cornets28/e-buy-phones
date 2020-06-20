@@ -11,6 +11,9 @@ class PhoneProvider extends Component {
     cart: [],
     modalIsOpen: false,
     modalPhone: detailPhone,
+    cartSubTotal: 0,
+    cartTax: 0,
+    cartTotal: 0,
   };
   // Get the copy of the data, instead of referencing (the original) them
   // also called 'DESTRUCTORING'
@@ -51,9 +54,9 @@ class PhoneProvider extends Component {
 
     this.setState(() => {
       return {
-      phones: [...tempPhones],
-      cart: [...this.state.cart, phone],
-      detailphone: { ...phone },
+        phones: [...tempPhones],
+        cart: [...this.state.cart, phone],
+        detailphone: { ...phone },
       };
     });
   };
@@ -71,6 +74,22 @@ class PhoneProvider extends Component {
     });
   };
 
+  increase = (id) => {
+    console.log("Increment the value");
+  };
+
+  decrease = (id) => {
+    console.log("decrement the value");
+  };
+
+  removePhone = (id) => {
+    console.log("remove the phone");
+  };
+
+  clearCart = () => {
+    console.log("clear cart methode");
+  };
+
   render() {
     return (
       <PhoneContext.Provider
@@ -80,6 +99,10 @@ class PhoneProvider extends Component {
           addToCart: this.addToCart,
           openModal: this.openModal,
           closeModal: this.closeModal,
+          increase: this.increase,
+          decrease: this.decrease,
+          removePhone: this.closeModal,
+          clearCart: this.clearCart,
         }}
       >
         {this.props.children}

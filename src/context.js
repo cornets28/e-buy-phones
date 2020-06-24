@@ -8,7 +8,7 @@ class PhoneProvider extends Component {
   state = {
     phones: [],
     detailPhone: detailPhone,
-    cart: [],
+    cart: ourPhones,
     modalIsOpen: false,
     modalPhone: detailPhone,
     cartSubTotal: 0,

@@ -94,7 +94,25 @@ class PhoneProvider extends Component {
   };
 
   removePhone = (id) => {
-    console.log("remove the phone");
+    let tempPhones = [...this.state.phones];
+    let tempCart = [...this.state.cart];
+
+    const index = tempPhones.indexOf(this.getPhoneId(id));
+    let removedPhone = tempPhones[index];
+    removedPhone.inCart = false;
+    removedPhone.count = 0;
+    removedPhone.total = 0;
+
+    tempCart = tempCart.filter((item) => {
+      return item.id !== id;
+    });
+
+    this.setState(() => {
+      return {
+        cart: [...tempCart],
+        products: [...tempPhones],
+      };
+    }, this.addTotals);
   };
 
   clearCart = () => {
@@ -155,7 +173,7 @@ class PhoneProvider extends Component {
           closeModal: this.closeModal,
           increase: this.increase,
           decrease: this.decrease,
-          removePhone: this.closeModal,
+          removePhone: this.removePhone,
           clearCart: this.clearCart,
         }}
       >

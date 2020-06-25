@@ -86,11 +86,37 @@ class PhoneProvider extends Component {
   };
 
   increase = (id) => {
-    console.log("Increment the value");
+    let tempCart = [...this.state.cart];
+    const selectedPhone = tempCart.find((phone) => {
+      return phone.id === id;
+    });
+    const index = tempCart.indexOf(selectedPhone);
+    const phone = tempCart[index];
+    phone.count = phone.count + 1;
+    phone.total = phone.count * phone.price;
+    this.setState(() => {
+      return {
+        cart: [...tempCart],
+      };
+    }, this.addTotals);
   };
 
   decrease = (id) => {
-    console.log("decrement the value");
+    let tempCart = [...this.state.cart];
+    const selectedPhone = tempCart.find((phone) => {
+      return phone.id === id;
+    });
+    const index = tempCart.indexOf(selectedPhone);
+    const phone = tempCart[index];
+    phone.count = phone.count - 1;
+    if (phone.count === 0) {
+      this.removePhone(id);
+    } else {
+      phone.total = phone.count * phone.price;
+      this.setState(() => {
+        return { cart: [...tempCart] };
+      }, this.addTotals);
+    }
   };
 
   removePhone = (id) => {

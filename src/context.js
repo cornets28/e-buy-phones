@@ -8,7 +8,7 @@ class PhoneProvider extends Component {
   state = {
     phones: [],
     detailPhone: detailPhone,
-    cart: ourPhones,
+    cart: [],
     modalIsOpen: false,
     modalPhone: detailPhone,
     cartSubTotal: 0,
@@ -58,7 +58,8 @@ class PhoneProvider extends Component {
         cart: [...this.state.cart, phone],
         detailphone: { ...phone },
       };
-    });
+    }, 
+    this.addTotals());
   };
 
   openModal = (id) => {
@@ -87,7 +88,50 @@ class PhoneProvider extends Component {
   };
 
   clearCart = () => {
-    console.log("clear cart methode");
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        this.setProducts();
+        this.addTotals();
+      }
+    );
+  };
+
+  getTotals = () => {
+    // const subTotal = this.state.cart
+    //   .map(item => item.total)
+    //   .reduce((acc, curr) => {
+    //     acc = acc + curr;
+    //     return acc;
+    //   }, 0);
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const tempTax = subTotal * 0.1;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
+    return {
+      subTotal,
+      tax,
+      total,
+    };
+  };
+
+  addTotals = () => {
+    const totals = this.getTotals();
+    this.setState(
+      () => {
+        return {
+          cartSubTotal: totals.subTotal,
+          cartTax: totals.tax,
+          cartTotal: totals.total,
+        };
+      },
+      () => {
+        // console.log(this.state);
+      }
+    );
   };
 
   render() {

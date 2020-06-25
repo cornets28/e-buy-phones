@@ -30,6 +30,17 @@ class PhoneProvider extends Component {
       phones: tempPhones,
     });
   };
+
+  // setProducts = () => {
+  //   let products = [];
+  //   storeProducts.forEach((item) => {
+  //     const singleItem = { ...item };
+  //     products = [...products, singleItem];
+  //   });
+  //   this.setState(() => {
+  //     return { products };
+  //   }, this.checkCartItems);
+  // };
   // Get the copy of the data (ENDS HERE)
 
   getPhoneId = (id) => {
@@ -58,7 +69,7 @@ class PhoneProvider extends Component {
         cart: [...this.state.cart, phone],
         detailphone: { ...phone },
       };
-    }, this.addTotals());
+    }, this.addTotals);
   };
 
   openModal = (id) => {

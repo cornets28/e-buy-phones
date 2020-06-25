@@ -8,7 +8,7 @@ class PhoneProvider extends Component {
   state = {
     phones: [],
     detailPhone: detailPhone,
-    cart: ourPhones,
+    cart: [],
     modalIsOpen: false,
     modalPhone: detailPhone,
     cartSubTotal: 0,
@@ -30,6 +30,17 @@ class PhoneProvider extends Component {
       phones: tempPhones,
     });
   };
+
+  // setProducts = () => {
+  //   let products = [];
+  //   storeProducts.forEach((item) => {
+  //     const singleItem = { ...item };
+  //     products = [...products, singleItem];
+  //   });
+  //   this.setState(() => {
+  //     return { products };
+  //   }, this.checkCartItems);
+  // };
   // Get the copy of the data (ENDS HERE)
 
   getPhoneId = (id) => {
@@ -58,7 +69,7 @@ class PhoneProvider extends Component {
         cart: [...this.state.cart, phone],
         detailphone: { ...phone },
       };
-    });
+    }, this.addTotals);
   };
 
   openModal = (id) => {
@@ -75,19 +86,106 @@ class PhoneProvider extends Component {
   };
 
   increase = (id) => {
-    console.log("Increment the value");
+    let tempCart = [...this.state.cart];
+    const selectedPhone = tempCart.find((phone) => {
+      return phone.id === id;
+    });
+    const index = tempCart.indexOf(selectedPhone);
+    const phone = tempCart[index];
+    phone.count = phone.count + 1;
+    phone.total = phone.count * phone.price;
+    this.setState(() => {
+      return {
+        cart: [...tempCart],
+      };
+    }, this.addTotals);
   };
 
   decrease = (id) => {
-    console.log("decrement the value");
+    let tempCart = [...this.state.cart];
+    const selectedPhone = tempCart.find((phone) => {
+      return phone.id === id;
+    });
+    const index = tempCart.indexOf(selectedPhone);
+    const phone = tempCart[index];
+    phone.count = phone.count - 1;
+    if (phone.count === 0) {
+      this.removePhone(id);
+    } else {
+      phone.total = phone.count * phone.price;
+      this.setState(() => {
+        return { cart: [...tempCart] };
+      }, this.addTotals);
+    }
   };
 
   removePhone = (id) => {
-    console.log("remove the phone");
+    let tempPhones = [...this.state.phones];
+    let tempCart = [...this.state.cart];
+
+    const index = tempPhones.indexOf(this.getPhoneId(id));
+    let removedPhone = tempPhones[index];
+    removedPhone.inCart = false;
+    removedPhone.count = 0;
+    removedPhone.total = 0;
+
+    tempCart = tempCart.filter((item) => {
+      return item.id !== id;
+    });
+
+    this.setState(() => {
+      return {
+        cart: [...tempCart],
+        products: [...tempPhones],
+      };
+    }, this.addTotals);
   };
 
   clearCart = () => {
-    console.log("clear cart methode");
+    this.setState(
+      () => {
+        return { cart: [] };
+      },
+      () => {
+        this.setPhones();
+        this.addTotals();
+      }
+    );
+  };
+
+  getTotals = () => {
+    // const subTotal = this.state.cart
+    //   .map(item => item.total)
+    //   .reduce((acc, curr) => {
+    //     acc = acc + curr;
+    //     return acc;
+    //   }, 0);
+    let subTotal = 0;
+    this.state.cart.map((item) => (subTotal += item.total));
+    const tempTax = subTotal * 0.1;
+    const tax = parseFloat(tempTax.toFixed(2));
+    const total = subTotal + tax;
+    return {
+      subTotal,
+      tax,
+      total,
+    };
+  };
+
+  addTotals = () => {
+    const totals = this.getTotals();
+    this.setState(
+      () => {
+        return {
+          cartSubTotal: totals.subTotal,
+          cartTax: totals.tax,
+          cartTotal: totals.total,
+        };
+      },
+      () => {
+        // console.log(this.state);
+      }
+    );
   };
 
   render() {
@@ -101,7 +199,7 @@ class PhoneProvider extends Component {
           closeModal: this.closeModal,
           increase: this.increase,
           decrease: this.decrease,
-          removePhone: this.closeModal,
+          removePhone: this.removePhone,
           clearCart: this.clearCart,
         }}
       >

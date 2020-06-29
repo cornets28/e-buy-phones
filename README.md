@@ -19,7 +19,7 @@
 
 This is a personal E-commerce phone App, built using React, HTML and CSS, SASS, Bootrtrap, netlify, paypal, npm and `https://styled-components.com/`)
 
-This is an online shopping app where users can view existing products with no need to sign up or log in. To add items in the app, Any user can select any of the existing products and buy them. This app does not contain any stripe feature. I have used `https://www.iconfinder.com/`
+This is an online shopping app where users can view existing products with no need to sign up or log in. Any user can select any of the existing products and buy them. This app do use contain any stripe feature, notably `paypal`. I have also used `https://www.iconfinder.com/`
 
 ## Requirements
 

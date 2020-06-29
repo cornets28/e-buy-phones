@@ -12,7 +12,7 @@
 
 ## Screenshots
 
-![](/images/Screenshot.png)
+![ScreenShot](/images/Screenshot.png)
 
 
 ## Description

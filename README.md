@@ -12,7 +12,7 @@
 
 ## Screenshots
 
-![](public/https://github.com/CornetS28/e-buy-phones/blob/master/public/images/Screenshot.png)
+![](https://github.com/CornetS28/e-buy-phones/blob/master/public/images/Screenshot.png)
 
 
 ## Description

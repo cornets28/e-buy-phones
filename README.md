@@ -1,4 +1,4 @@
-# E-BUY-PHONES
+# E-Buy-Phones
 
 # Table of Contents:
 

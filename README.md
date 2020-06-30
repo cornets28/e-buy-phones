@@ -43,7 +43,7 @@ cd e-buy-phones
 
 ## Demo
 
-[Demo](https://e-buy-phones.netlify.app/)
+[e-buy-phones](https://e-buy-phones.netlify.app/)
 
 ## Test
 

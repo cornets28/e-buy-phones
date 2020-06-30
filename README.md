@@ -43,7 +43,7 @@ cd e-buy-phones
 
 ## Demo
 
-Demo is not ready yet. I am still working on finishing the app
+[Demo](https://e-buy-phones.netlify.app/)
 
 ## Test
 
